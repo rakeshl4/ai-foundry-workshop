@@ -14,8 +14,23 @@
         "vscode": {
             "extensions": [
                 "ms-dotnettools.dotnet-interactive-vscode",
-                "ms-toolsai.jupyter"
-            ]
+                "ms-toolsai.jupyter",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter-keymap",
+                "ms-toolsai.jupyter-renderers",
+                "ms-python.black-formatter"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.formatting.provider": "black",
+                "python.analysis.typeCheckingMode": "basic",
+                "jupyter.notebookFileRoot": "${workspaceFolder}",
+                "jupyter.interactiveWindow.textEditor.executeSelection": true,
+                "jupyter.experimental.debugging": true
+            }
         }
-    }
+    },
+    "postCreateCommand": "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py && rm get-pip.py && pip install -r requirements.txt && pip install -r 2-notebooks/requirements.txt && pip install black pylint ipykernel jupyter notebook pandas python-dotenv azure-identity azure-ai-projects azure-search-documents autogen-agentchat"
 }
