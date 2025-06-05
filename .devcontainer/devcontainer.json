@@ -1,5 +1,5 @@
 {
-    "name": "Azure Developer CLI",
+    "name": "AI Agent Workshop",
     "image": "mcr.microsoft.com/devcontainers/python:3.10-bullseye",
     "features": {
         // See https://containers.dev/features for list of features
@@ -7,7 +7,7 @@
         "ghcr.io/azure/azure-dev/azd:latest": {},
         "ghcr.io/devcontainers/features/azure-cli:1": {},
         "ghcr.io/devcontainers/features/dotnet:1": {
-            "version": "8.0"
+            "version": "9.0"
         }
     },
     "customizations": {
@@ -31,6 +31,6 @@
                 "jupyter.experimental.debugging": true
             }
         }
-    },
-    "postCreateCommand": "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py && rm get-pip.py && pip install -r requirements.txt && pip install -r 2-notebooks/requirements.txt && pip install black pylint ipykernel jupyter notebook pandas python-dotenv azure-identity azure-ai-projects azure-search-documents autogen-agentchat"
+    }
+    //"postCreateCommand": "python -m pip install --upgrade pip && python -m pip install ipykernel jupyter && python -m ipykernel install --user --name python3 --display-name 'Python 3.10' && pip install -r requirements.txt && pip install -r 2-notebooks/requirements.txt"
 }
